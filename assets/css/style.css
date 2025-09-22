@@ -1,0 +1,482 @@
+body, html {
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    font-size: 18px;
+    transition: all 0.5s;
+}
+
+a:hover {
+    color: rgb(170, 170, 170);
+    transition: all 0.5s;
+}
+
+#logo {
+    height: 40px;
+    margin-top: 10px;
+}
+
+.navbar {
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2%;
+    z-index: 10;
+    position: fixed;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    margin-bottom: 0;
+    margin-right: 4%;
+    padding: 0;
+}
+
+/* ---------------------------------- INICIAL ---------------------------- */
+
+#one-inicio {
+    background-image: url(../images/bg/bg-mars.jpeg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;  
+    padding-top: 15vh;
+}
+#two-inicio {
+    background-image: url(../images/bg/bg-stars.jpeg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;  
+    padding-top: 15vh;
+}
+
+.content-inicio {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items:flex-start;
+    flex-direction: column;
+    height: 80vh;
+    padding-left: 4vw;
+}
+.content-inicio-2 {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items:center;
+    flex-direction: row;
+    height: 80vh;
+    padding-left: 4vw;
+}
+
+.texto-principal {
+    font-weight: 400;
+    margin: 0;
+    width: 100%;
+}
+
+/* --------------------------------- METEOROS ---------------------------- */
+
+#body-meteoros {
+    background-image: url(../images/bg/bg-stars.jpeg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    
+}
+
+#title-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 30vh;
+    margin-top: 25vh;
+    text-align: center;
+}
+
+#sendData {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #054aab;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#sendData:hover {
+    background-color: #023880;
+    transition: all 0.5s;
+}
+
+
+/* --------------------------------FOTO DO DIA ---------------------------- */
+
+
+#body-fotos {
+    background-image: url(../images/bg/bg-stars2.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    min-height: 110vh;
+}
+
+#title-secondary {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* --------------------------------------MARTE------------------------------ */
+
+#body-marte {
+    background-image: url(../images/bg/bg-stars.jpeg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    min-height: 110vh;
+}
+
+/* --------------------------------------SOBRE------------------------------- */
+
+
+#body-sobre {
+        background-image: url(../images/bg/bg-stars.jpeg);
+        background-size:cover;
+        background-repeat: no-repeat;
+        min-height: 110vh; 
+}
+    
+#top-sobre {
+        margin-top: 60px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 20vh;
+}
+
+#title-sobre {
+        font-size: 40px;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        margin-left: 4vw;
+}
+
+    #bottom-sobre {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 60vh;
+        width: 100%;
+        padding-left: 10vw;
+        padding-right: 10vw;
+}
+
+
+/* -------------------------------------- CONTATO ------------------------- */
+
+
+#body-contato {
+    background-image: url(../images/bg/bg-stars.jpeg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    min-height: 100vh; 
+    overflow: hidden; 
+}
+
+#top-contato {
+    margin-top: 66px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+#bottom-contato {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+    width: 100%;
+}
+
+#title-contato {
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+}
+
+#insta, #face {
+    height: 80px;
+    margin: 10px;
+}
+
+.insta, .face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 3vh;
+}
+
+.contact {
+    font-size: 40px;
+}
+
+/* ------------------------------------------------------ MEDIA QUERY ------------------------------------------- */
+
+@media (min-width: 300px) {
+    a {
+        font-size: 10px;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;   
+    }
+    .nav-links {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+        margin-top: 2vh;
+        padding-left: 2vw;
+        padding-right: 5vw;
+    }
+
+    /* ----------------------------------- INICIO ----------------------------- */
+
+    #one-inicio, #two-inicio {
+        background-image: url(../images/bg/bg-stars.jpeg);
+        background-size:cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;  
+        padding-top: 15vh;
+    }
+
+    .content-inicio, .content-inicio-2 {
+        margin-top: 10vh;
+        margin-left: 0;
+        padding-right: 4vw;
+    }
+
+    .right, .left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .left {
+        display: flex;
+        justify-content: center;
+    }
+    .content-inicio-2 {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .texto-secundario {
+        margin-bottom: 3vh;
+    }
+
+    /* ----------------------------------- METEOROS ----------------------------- */
+
+    .col-4 {
+        width: 80% !important;
+        margin-bottom: 10px;
+    }
+
+    #body-meteoros #title-div .texto-principal {
+        font-size: 35px !important;
+    }
+
+    /* ----------------------------------- FOTOS ----------------------------- */
+
+    #title-secondary {
+        margin-top: 25vh;
+    }  
+    
+    #title-secondary .texto-principal {
+        font-size: 25px !important;
+    }
+
+    #foto-do-dia {
+        width: 80% !important;
+    }
+
+    /* ----------------------------------- MARTE ----------------------------- */
+
+    .col-6 {
+        width: 80% !important;
+        margin-bottom: 10px;
+    }
+
+    /* ----------------------------------- SOBRE ----------------------------- */
+
+    #top-sobre {
+        margin-top: 100px;
+        height: 10vh;
+    }
+
+    #title-sobre {
+        font-size: 40px;
+        margin-bottom: 5vh;
+    }
+
+    #bottom-sobre {
+        height: 80vh;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    /* ----------------------------------- CONTATO ----------------------------- */
+
+    #title-contato {
+        font-size: 42px;
+    }
+    #insta, #face {
+        height: 30px;
+        margin: 5px;
+    }
+    .contact {
+        font-size: 25px;
+    }
+    #top-contato {
+        margin-top: 20vh;
+    }
+}
+
+
+@media (min-width: 768px) {
+    a {
+        font-size: 16px;
+    }
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 0;   
+    }
+    .nav-links {
+        width: 60%;
+        margin-bottom: 0;
+        margin-right: 4%;
+        margin-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* ----------------------------------- INICIO ----------------------------- */
+
+    #one-inicio {
+        background-image: url(../images/bg/bg-mars.jpeg);
+        background-size:cover;
+        background-repeat: no-repeat;
+        min-height: 110vh !important;  
+        padding-top: 15vh;
+    }
+    .content-inicio {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items:flex-start;
+        flex-direction: column;
+        height: 80vh;
+        padding-left: 4vw;
+    }
+    .content-inicio-2 {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items:center;
+        flex-direction: row;
+        height: 80vh;
+        padding-left: 4vw;
+    }
+    .texto-principal {
+        font-size: 30px;
+        font-weight: 400;
+        margin: 0;
+        width: 100%;
+    }
+    .texto-secundario {
+        font-size: 20px;
+        font-weight: 300;
+        margin-top: 2vh;
+        width: 100%;
+    }       
+    .right {
+        width: 50%;
+    }
+    .left {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    #carouselExampleFade {
+        width: 70% !important;
+    }
+
+    /* ----------------------------------- FOTOS ----------------------------- */
+
+    #title-secondary {
+        margin-top: 15vh;
+    }  
+    
+    #title-secondary .texto-principal {
+        font-size: 35px !important;
+    }
+
+    #foto-do-dia {
+        width: 50% !important;
+    }
+
+    /* ------------------------------------ MARTE --------------------------------- */
+
+    .col-6 {
+        width: 30% !important;
+        margin-bottom: 10px;
+    }
+
+
+    /* ----------------------------------- METEOROS ----------------------------- */
+
+    .col-4 {
+        width: 30% !important;
+        margin-bottom: 10px;
+    }
+
+    /* ----------------------------------- SOBRE ----------------------------- */
+
+    #top-sobre {
+        margin-top: 66px;
+    }
+}
+
+

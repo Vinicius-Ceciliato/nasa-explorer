@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Meteoros</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jost:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body id="body-meteoros" onload="getMeteoros()">
+    <div class="navbar">
+        <a href="inicio.html"><img src="./assets/images/logo/logo.svg" id="logo"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">INÍCIO</a></li>
+            <li><a href="meteoros.html">METEOROS</a></li>
+            <li><a href="fotos.html">FOTOS</a></li>
+            <li><a href="marte.html">MARTE</a></li>
+            <li><a href="sobre.html">SOBRE</a></li>
+            <li><a href="contato.html">CONTATO</a></li>
+        </ul>
+    </div>
+
+    <div id="title-div">
+
+        <div class="texto-principal"><b>Analise</b> os meteoros próximos!</div>
+        <hr class="w-75 mb-5">
+        
+    </div>
+
+    <div class="content-meteoros w-100 d-flex justify-content-center">
+        <div class="row w-100 d-flex justify-content-center" id="box">
+        </div>
+
+        
+    </div>
+
+    <script>
+        function getMeteoros(){
+
+            const hoje = new Date().toISOString().slice(0, 10);
+
+            let url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${hoje}&end_date=${hoje}&api_key=oF4aerQFcUU4vYKqYeFezHkR0WbYFoI9p0jPzLHu`;
+
+            console.log(url);
+            let box = document.querySelector('#box');
+            
+            fetch(url)
+            .then(res => res.json())
+            .then(meteoros => {
+                console.log(meteoros);
+                const meteoro = meteoros.near_earth_objects[hoje];
+                meteoro.forEach(meteorinhos => {
+                    console.log(meteorinhos.name);
+
+                    let nome = document.createElement('h2');
+                    nome.innerText = meteorinhos.name;
+                    nome.style.fontSize = '12px';
+                    nome.style.color = 'black';
+                    nome.style.margin = '5px';
+                    nome.style.fontWeight = '700';
+
+                    let diametroMinimo = document.createElement('h3');
+                    diametroMinimo.innerText = `Diâmetro mínimo: ${meteorinhos.estimated_diameter.kilometers.estimated_diameter_min.toFixed(3)} km`;
+                    diametroMinimo.style.fontSize = '12px';
+                    diametroMinimo.style.color = 'black';
+                    diametroMinimo.style.margin = '5px';
+                    diametroMinimo.style.fontWeight = '500';
+
+                    let diametroMaximo = document.createElement('h3');
+                    diametroMaximo.innerText = `Diâmetro máximo: ${meteorinhos.estimated_diameter.kilometers.estimated_diameter_max.toFixed(3)} km`;
+                    diametroMaximo.style.fontSize = '12px';
+                    diametroMaximo.style.color = 'black';
+                    diametroMaximo.style.margin = '5px';
+                    diametroMaximo.style.fontWeight = '500';
+
+                    let perigo = document.createElement('h3');
+                    perigo.innerText = meteorinhos.is_potentially_hazardous_asteroid ? 'Perigoso' : 'Não perigoso';
+                    perigo.style.fontSize = '12px';
+                    perigo.style.color = meteorinhos.is_potentially_hazardous_asteroid ? 'red' : 'green';
+                    perigo.style.margin = '5px';
+                    perigo.style.fontWeight = '500';
+
+                    let col = document.createElement('div');
+                    col.classList.add('col-4');                                   
+                    col.style.borderRadius = '8px';
+                    col.style.background = 'white';
+                    col.style.margin = '5px';
+                    col.style.width = '30%';
+                    col.style.display = 'flex';
+                    col.style.justifyContent = 'center';
+                    col.style.alignItems = 'center';
+                    col.style.flexDirection = 'column';
+                    col.style.padding = '10px';
+
+                    col.appendChild(nome);
+                    col.appendChild(diametroMinimo);
+                    col.appendChild(diametroMaximo);
+                    col.appendChild(perigo);
+                    box.appendChild(col);
+                });
+            })
+        }
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+</body>
+</html>

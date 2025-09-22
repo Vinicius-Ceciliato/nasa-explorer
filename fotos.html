@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Meteoros</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jost:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body id="body-fotos" onload="getFotoHoje()">
+    <div class="navbar">
+        <a href="inicio.html"><img src="./assets/images/logo/logo.svg" id="logo"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">INÍCIO</a></li>
+            <li><a href="meteoros.html">METEOROS</a></li>
+            <li><a href="fotos.html">FOTOS</a></li>
+            <li><a href="marte.html">MARTE</a></li>
+            <li><a href="sobre.html">SOBRE</a></li>
+            <li><a href="contato.html">CONTATO</a></li>
+        </ul>
+    </div>
+
+    <div id="title-secondary">
+        <div class="texto-principal"><b>Admire</b> nossa imagem do dia!</div>
+        <hr class="w-75 mb-5">
+    </div>
+
+    
+
+    <div class="content-foto-hoje w-100 d-flex justify-content-center align-items-center">       
+    </div>
+
+    <script>
+        function getFotoHoje(){
+
+            let url = `https://api.nasa.gov/planetary/apod?api_key=oF4aerQFcUU4vYKqYeFezHkR0WbYFoI9p0jPzLHu`;
+            let content = document.querySelector('.content-foto-hoje');
+            console.log(url);
+            
+            fetch(url)
+            .then(res => res.json())
+            .then(foto => {
+                let fotoDia = document.createElement('img');
+                fotoDia.setAttribute('src', foto.url);
+                fotoDia.setAttribute('id', 'foto-do-dia');
+                fotoDia.style.width = '40%'
+
+                content.appendChild(fotoDia);
+
+            })
+        }
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+</body>
+</html>
