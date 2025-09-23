@@ -1,2 +1,5 @@
 # nasa-explorer-2
-Repositório para aula de Programação Mobile 1.
+Repositório para projeto API da Nasa
+
+# Autor
+Vinicius Ceciliato Seabra Mayer
