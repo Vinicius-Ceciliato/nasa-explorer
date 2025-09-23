@@ -495,7 +495,14 @@ a:hover {
     /* ----------------------------------- SOBRE ----------------------------- */
 
     #top-sobre {
-        margin-top: 66px;
+        margin-top: 15vh;
+        height: 10%;
+    }
+
+    #bottom-sobre {
+        font-size: 24px;
+        margin-bottom: 10vh;
+        height: 60%;
     }
 }
 
