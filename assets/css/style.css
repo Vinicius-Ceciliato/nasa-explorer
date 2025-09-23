@@ -355,8 +355,9 @@ a:hover {
     /* ----------------------------------- SOBRE ----------------------------- */
 
     #top-sobre {
-        margin-top: 100px;
+        margin-top: 24vh;
         height: 10vh;
+        justify-content: center;
     }
 
     #title-sobre {
