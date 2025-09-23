@@ -1,4 +1,4 @@
-# nasa-explorer-2
+# Nasa Explorer
 Repositório para projeto API da Nasa
 
 # Autor
