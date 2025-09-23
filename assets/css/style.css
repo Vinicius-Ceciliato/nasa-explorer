@@ -276,6 +276,11 @@ a:hover {
         padding-top: 15vh;
     }
 
+    #one-inicio {
+        display: flex;
+        justify-content: center;
+    }
+
     .content-inicio, .content-inicio-2 {
         margin-top: 10vh;
         margin-left: 0;
@@ -291,14 +296,28 @@ a:hover {
         display: flex;
         justify-content: center;
     }
+
+    .content-inicio {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 70%;
+    }
+
     .content-inicio-2 {
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .texto-secundario {
+    .right .texto-secundario {
         margin-bottom: 3vh;
+        font-size: 20px;
+    }
+
+    .right .texto-principal {
+        margin-bottom: 3vh;
+        font-size: 28px;
     }
 
     /* ----------------------------------- METEOROS ----------------------------- */
